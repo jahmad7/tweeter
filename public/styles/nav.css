@@ -1,0 +1,48 @@
+#nav-bar .logo {
+    height: 60px;
+    float: left;
+    padding: 0px 20%;
+}
+
+#nav-bar {
+    height: 80px;
+    width: 100%;
+    background: #0B172A;
+    color: #e8fdff;
+    padding: 0px 2em;
+}
+
+#nav-bar .header{
+    float: left;
+    font-size: 200%;
+    line-height: 200%;
+}
+
+#nav-bar #nav-search {
+    height: 60%;
+    background-color: #0B172A;
+    color: white;
+}
+
+
+#nav-bar .top-nav a{
+    float: left;
+    text-align: center;
+    padding: 25px 16px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#nav-bar #nav-search {
+    float: right;
+    padding: 21px 16px;
+}
+
+#nav-bar #nav-search input{
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #0B172A;
+    color: #fff;
+    border: solid 2px #FCAF3B;
+}

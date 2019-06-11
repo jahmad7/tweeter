@@ -2,13 +2,17 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+    <title>Necter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -21,12 +25,50 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
-      <span class="header">Tweeter</span>
+
+      <!-- nav list to site locations-->
+      <div class="top-nav">
+        <a href="#">Ecosystem</a>
+        <a href="#">Growth</a>
+        <a href="#">Messages</a>
+      </div>
+
+      <!-- center logo -->
+      <img class="logo" src="/images/bee.png" >
+ 
+
+      <!-- Search bar for strains-->
+      <form id="nav-search" action="">
+        <input  type="text" placeholder="Search Stream">
+      </form>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+
+      <!-- New Tweet -->
+        <section class="new-tweet">
+          <header>
+              <h2 id="new-tweet-header">Contribute</h2>
+              
+              <div class="dropdown-show">
+                <span>new strain ▽</span>
+                <div class="dropdown-strain-content">
+                  <ul>
+                    <li>NEW STRAIN</li>
+                    <li>Yukon Greenhouse</li>
+                  </ul>
+                </div>
+              </div>
+          </header>
+            
+            <form id="new-tweet-form" method="POST" action="/tweets">
+              <textarea name="pollin-text" placeholder="Whats the next step?"></textarea>
+              <input name="pollinate-submit-btn" type="submit" value="Pollinate">
+              <span class="counter">140</span>
+            </form>
+          </section>
     </main>
 
   </body>
