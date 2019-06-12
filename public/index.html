@@ -11,7 +11,8 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-pollinate.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/contribution-template.css" type="text/css">
 
 
     <!-- External JS -->
@@ -19,6 +20,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -47,28 +49,72 @@
     <main class="container">
 
 
-      <!-- New Tweet -->
-        <section class="new-tweet">
+      <!-- New pollinate -->
+        <section class="new-pollinate">
           <header>
-              <h2 id="new-tweet-header">Contribute</h2>
-              
-              <div class="dropdown-show">
-                <span>new strain ▽</span>
-                <div class="dropdown-strain-content">
-                  <ul>
-                    <li>NEW STRAIN</li>
-                    <li>Yukon Greenhouse</li>
-                  </ul>
-                </div>
+            <h2 id="new-pollinate-header">Contribute</h2>
+            <div class="dropdown-show">
+              <span>new strain ▽</span>
+              <div class="dropdown-strain-content">
+                <ul>
+                  <li>NEW STRAIN</li>
+                  <li>Yukon Greenhouse</li>
+                </ul>
               </div>
+            </div>
           </header>
             
-            <form id="new-tweet-form" method="POST" action="/tweets">
-              <textarea name="pollin-text" placeholder="Whats the next step?"></textarea>
-              <input name="pollinate-submit-btn" type="submit" value="Pollinate">
-              <span class="counter">140</span>
-            </form>
-          </section>
+          <form id="new-pollinate-form" method="POST" action="/pollinates">
+            <textarea id="textBox" name="pollin-text" placeholder="Whats the next step?"></textarea>
+            <input name="pollinate-submit-btn" type="submit" value="Pollinate">
+            <span class="counter">140</span>
+          </form>
+        </section>
+      
+        <section id="ecosystem-container">
+          <article class="pollen-contribution">
+            <header>
+              <div class="user-section">
+                <div>
+                  <img class="user-picture"src="/images/sample-dp.png" alt="users profile picture">
+                </div>
+                <div class="user-information">
+                  <a href="">User name</a>
+                  <a href="">location</a>
+                  <a href="">title</a>
+                </div>
+              </div>
+              <div id="header-err-space"></div>
+              <fiqure class="branch-information">
+                <a href="">Main Branch</a>
+                <a href="">Current Node</a>
+              </fiqure>
+            </header>
+
+            <main>
+              <time>June 14th 2019</time>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                </p>
+            </main>
+
+            <footer>
+              <section class="standing-information">
+                <a href="">Pollen count</a>
+                <a href="">Agree</a>
+                <a href="">Disagree</a>
+              </section>
+
+              <section class="response-options">
+                <button>Pollinate</button>
+                <button>Branch</button>
+              </section>
+            </footer>
+          </article>
+        </section>
+        
     </main>
 
   </body>

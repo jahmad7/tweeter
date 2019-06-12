@@ -1,4 +1,4 @@
-.new-tweet {
+.new-pollinate {
     background-color: #0B172A;
     border: 4px solid #BC4123;
     color: #fff;
@@ -9,6 +9,10 @@
 
 .dropdown-show {
     float: right;
+}
+
+.redText {
+    color: red;
 }
 
 .dropdown-strain-content {
@@ -26,15 +30,15 @@
     display: block;
 }
 
-.new-tweet header {
+.new-pollinate header {
     border-bottom: 3px solid #fff;
 }
- #new-tweet-header {
+ #new-pollinate-header {
     display:inline;
     margin-top: 0px;
 }
 
-#new-tweet-form input {
+#new-pollinate-form input {
     display: inline;
     color: #fff;
     background-color:  #0B172A;
@@ -43,7 +47,7 @@
     padding: 2px 15px;
 }
 
-#new-tweet-form textarea {
+#new-pollinate-form textarea {
     width: 95%;
     height: 100px;
     padding: 10px 10px;
@@ -51,7 +55,7 @@
     border-radius: 15px;
 }
 
-main .new-tweet #new-tweet-form .counter {
+main .new-pollinate #new-pollinate-form .counter {
    float: right;
    padding-right: 30px;
 }
