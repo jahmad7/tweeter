@@ -88,7 +88,7 @@ $(function () {
       $("#errorMessage").html("No Contribution made");
     }
     else if ($("#textBox").val().length > 140) {
-      $("#errorMessage").val("Contribution too long. Shorten.");
+      $("#errorMessage").html("Contribution too long. Shorten.");
     }
     else{
       $.ajax({
@@ -97,12 +97,11 @@ $(function () {
         data: $queryString,
         success: function () {
           loadContrabutions();
+          $("#textBox").val("");
+          $("#errorMessage").html("");
         }
       })
-      //clear error message
-      $("#errorMessage").val("");
-      //reset the textbox to empty 
-      $("#textBox").val("");
+
     }
     
   });
@@ -119,7 +118,6 @@ $(function () {
     $("#new-pollinate-form").css({"display": "none"});
     $("#contribution-default").css({"display": "flex", "border-bottom": "0px"});
   });
-  //$(".new-pollinate").slideToggle()(showForm());
 
 
   //Initial load of contributions 
