@@ -27,7 +27,7 @@ function createPollinationElement(currentUserInfo) {
             <div id="header-err-space"></div>
             <fiqure class="branch-information">
                 <a href="">${currentUserInfo.content.mainBranch}</a>
-                <a href="">${currentUserInfo.content.currentNode}db.</a>
+                <a href="">${currentUserInfo.content.currentNode}</a>
             </fiqure>
         </header>
   
@@ -55,6 +55,7 @@ function createPollinationElement(currentUserInfo) {
 }
 
 function renderContributions(ecosystem) {
+  $("#ecosystem-container").empty();
   for (let contribution of ecosystem) {
     $("#ecosystem-container").prepend(createPollinationElement(contribution));
   }
@@ -63,7 +64,6 @@ function renderContributions(ecosystem) {
 
 //post new contribution 
 $(function () {
-
   function loadContrabutions() {
     $.ajax({
       url: "/tweets",
@@ -83,6 +83,7 @@ $(function () {
     event.preventDefault();
 
     let $queryString = $(this).serialize();
+    console.log("QSS !!!: ", $queryString);
 
     if ($("#textBox").val().length === 0) {
       $("#errorMessage").html("No Contribution made");
