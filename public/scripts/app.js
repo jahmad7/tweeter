@@ -61,7 +61,6 @@ function renderContributions(ecosystem) {
 
 }
 
-
 //post new contribution 
 $(function () {
 
@@ -105,9 +104,25 @@ $(function () {
       //reset the textbox to empty 
       $("#textBox").val("");
     }
-
+    
   });
+
+  $("#open-contribution-section").click(function(){
+    $("#pollination-form-view").css({"display": "flex"});
+    $("#new-pollinate-form").css({"display": "block"});
+    $("#contribution-default").css({"display": "none"});
+    $("#textBox").select();
+  });
+  
+  $("#close-contribution").click(function(){
+    $("#pollination-form-view").css({"display": "none"});
+    $("#new-pollinate-form").css({"display": "none"});
+    $("#contribution-default").css({"display": "flex", "border-bottom": "0px"});
+  });
+  //$(".new-pollinate").slideToggle()(showForm());
+
 
   //Initial load of contributions 
   loadContrabutions()
 });
+

@@ -56,30 +56,48 @@
 
       <!-- New pollinate -->
         <section class="new-pollinate">
-          <header>
-            <h2 id="contirbution-header-title">Contribute</h2>
-            <div class="dropdown-show">
-              <span>new strain ▽</span>
-              <div class="dropdown-strain-content">
-                <ul>
-                  <li>NEW STRAIN</li>
-                  <li>Yukon Greenhouse</li>
-                </ul>
+          <!-- New pollinate default-->
+          <header id="contribution-default">
+            <div id="user-main">
+              <div>
+                <img class="user-picture"src="/images/sample-dp.png" alt="users profile picture">
+              </div>
+              <div id="user-main-information">
+                <a href="">User name</a>
+                <a href="">Session Change</a>
+                <a href="">Active Branches</a>
               </div>
             </div>
-            <div>
-              <input id="close-contribution" name="close-contribution" type="submit" value="X">
+            <div id="header-err-space"></div>
+            <div id="new-contribution-section">
+              <button id="open-contribution-section"> ADD CONTRIBUTION</button>
             </div>
           </header>
-            
-          <form id="new-pollinate-form">
-            <textarea id="textBox" name="text" placeholder="Whats the next step?"></textarea>
-            <div id="submitVariables">
-              <input id="pollinate-submit" name="pollinate-submit-btn" type="submit" value="Pollinate">
-              <p id="errorMessage"></p>
-              <span class="counter">140</span>
+          <!-- New pollinate form view-->
+          <header id="pollination-form-view">
+            <h2 id="contirbution-header-title">Contribute</h2>
+            <div class="dropdown-show">
+                <span>new strain ▽</span>
+                <div class="dropdown-strain-content">
+                <ul>
+                    <li>NEW STRAIN</li>
+                    <li>Yukon Greenhouse</li>
+                </ul>
+                </div>
             </div>
-          </form>
+            <div>
+                <button id="close-contribution"> X</button>
+            </div>
+            </header>
+                    
+            <form id="new-pollinate-form">
+                <textarea id="textBox" name="text" placeholder="Whats the next step?"></textarea>
+                <div id="submitVariables">
+                    <input id="pollinate-submit" name="pollinate-submit-btn" type="submit" value="Pollinate">
+                    <p id="errorMessage"></p>
+                    <span class="counter">140</span>
+                </div>
+            </form>
         </section>
       
         <section id="ecosystem-container">

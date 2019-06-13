@@ -94,3 +94,51 @@ main .new-pollinate #new-pollinate-form .counter {
 #submitVariables #counter {
     flex: 1;
 }
+
+#user-main {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    margin-bottom: 5px;
+}
+
+#user-main-information {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+#user-main-information a{
+    color: white;
+    text-decoration: none;
+}
+
+#new-contribution-section {
+    flex: 2;
+    padding-top: 10px;
+    padding-left: 90px;
+}
+
+#open-contribution-section {
+    flex: 1;
+    color: #fff;
+    background-color: #0B172A;
+    border: 2px solid #FCAF3B;
+    border-radius: 25px;
+    margin-left: 10px;
+    padding: 10px 25px;
+}
+
+#pollination-form-view {
+    display: none;
+}
+
+#new-pollinate-form {
+    display: none;
+}
+
+#contribution-default {
+    border-bottom: 0px;
+}
+
+
