@@ -26,8 +26,8 @@ function createPollinationElement(currentUserInfo) {
             </div>
             <div id="header-err-space"></div>
             <fiqure class="branch-information">
-                <a href="">Main Branch</a>
-                <a href="">Current Node</a>
+                <a href="">${currentUserInfo.content.mainBranch}</a>
+                <a href="">${currentUserInfo.content.currentNode}db.</a>
             </fiqure>
         </header>
   
