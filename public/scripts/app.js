@@ -4,32 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const contributionData = {
-    "user": {
-      "name": "Newton",
-      "title": "Citizen",
-      "location": "Toronto",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants",
-      "pollinationSum": 1,
-      "support": 1,
-      "disagree": 0
-    },
-    "created_at": 1461116232227
-};
-
-
-let currentUserInfo = contributionData;
-
 function createPollinationElement(currentUserInfo) {
-    let newPollinationElement = 
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  let newPollinationElement =
     `<article class="pollen-contribution">
         <header>
             <div class="user-section">
@@ -52,7 +34,7 @@ function createPollinationElement(currentUserInfo) {
         <main>
             <time>${currentUserInfo.created_at}</time>
             <p>
-                ${currentUserInfo.content.text}
+                ${escape(currentUserInfo.content.text)}
             </p>
         </main>
   
@@ -69,15 +51,63 @@ function createPollinationElement(currentUserInfo) {
             </section>
         </footer>
     </article>`;
-    return newPollinationElement;
+  return newPollinationElement;
 }
 
 function renderContributions(ecosystem) {
-    e
+  for (let contribution of ecosystem) {
+    $("#ecosystem-container").prepend(createPollinationElement(contribution));
+  }
+
 }
-$(document).ready(function(){
-    $("#ecosystem-container").append(newPollinationElement);
+
+
+//post new contribution 
+$(function () {
+
+  function loadContrabutions() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      success: function (response) {
+        renderContributions(response);
+      },
+      failure: function () {
+        console.log("failed");
+      }
+    });
+  }
+
+  var $formSubmit = $("#new-pollinate-form");
+  $formSubmit.submit(function (event) {
+
+    event.preventDefault();
+
+    let $queryString = $(this).serialize();
+
+    if ($("#textBox").val().length === 0) {
+      $("#errorMessage").html("No Contribution made");
+    }
+    else if ($("#textBox").val().length > 140) {
+      $("#errorMessage").val("Contribution too long. Shorten.");
+    }
+    else{
+      $.ajax({
+        url: "/tweets",
+        type: "POST",
+        data: $queryString,
+        success: function () {
+          loadContrabutions();
+        }
+      })
+      //clear error message
+      $("#errorMessage").val("");
+      //reset the textbox to empty 
+      $("#textBox").val("");
+    }
+
+  });
+
+  //Initial load of contributions 
+  loadContrabutions()
 });
-
- 
-

@@ -21,6 +21,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    
   </head>
 
   <body>
@@ -36,13 +37,17 @@
       </div>
 
       <!-- center logo -->
-      <img class="logo" src="/images/bee.png" >
+      <div class="middle-nav">
+        <img class="logo" src="/images/bee.png" >
+      </div>
  
 
       <!-- Search bar for strains-->
-      <form id="nav-search" action="">
-        <input  type="text" placeholder="Search Stream">
-      </form>
+      <div class="nav-bottom">
+        <form id="nav-search" action="">
+          <input  type="text" placeholder="Search Stream">
+        </form>
+      </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -52,7 +57,7 @@
       <!-- New pollinate -->
         <section class="new-pollinate">
           <header>
-            <h2 id="new-pollinate-header">Contribute</h2>
+            <h2 id="contirbution-header-title">Contribute</h2>
             <div class="dropdown-show">
               <span>new strain ▽</span>
               <div class="dropdown-strain-content">
@@ -62,12 +67,18 @@
                 </ul>
               </div>
             </div>
+            <div>
+              <input id="close-contribution" name="close-contribution" type="submit" value="X">
+            </div>
           </header>
             
-          <form id="new-pollinate-form" method="POST" action="/pollinates">
-            <textarea id="textBox" name="pollin-text" placeholder="Whats the next step?"></textarea>
-            <input name="pollinate-submit-btn" type="submit" value="Pollinate">
-            <span class="counter">140</span>
+          <form id="new-pollinate-form">
+            <textarea id="textBox" name="text" placeholder="Whats the next step?"></textarea>
+            <div id="submitVariables">
+              <input id="pollinate-submit" name="pollinate-submit-btn" type="submit" value="Pollinate">
+              <p id="errorMessage"></p>
+              <span class="counter">140</span>
+            </div>
           </form>
         </section>
       
