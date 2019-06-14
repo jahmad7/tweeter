@@ -107,6 +107,8 @@ $(function () {
     
   });
 
+
+
   $("#open-contribution-section").click(function(){
     $("#pollination-form-view").css({"display": "flex"});
     $("#new-pollinate-form").css({"display": "block"});

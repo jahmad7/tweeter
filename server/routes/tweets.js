@@ -23,13 +23,23 @@ module.exports = function(DataHelpers) {
       return;
     }
 
-    const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+  
+    const user = req.body.user ? req.body.user : "Not Logged In";
     const tweet = {
       user: user,
+      location: req.body.location,
+      title: req.body.title,
       content: {
-        text: req.body.text
+        text: req.body.text,
+        mainBranch: req.body.mainBranch,
+        currentNode: req.body.currentNode
       },
-      created_at: Date.now()
+      created_at: today
     };
 
     DataHelpers.saveTweet(tweet, (err) => {

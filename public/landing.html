@@ -14,6 +14,9 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/landing.css" type="text/css" />
 
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/signup.js"></script>
+
 </head>
 <body>
     <header>
@@ -37,7 +40,7 @@
                 <input id="searchBar" type="text" placeholder="Search Stream ... | ">
 
                 <!-- login in form -->
-                <div id="loginForm">
+                <div id="loginDiv">
                     <form>
                         <h3>Login</h3>
                         <input id="userName" name="userName" type="text" placeholder="User Name">
@@ -47,8 +50,8 @@
                 </div>
 
                 <!-- Sign up form -->
-                <div id="signUp">
-                    <form>
+                <div id="signUpDiv">
+                    <form id="signUpForm"> 
                         <h3>Sign Up</h3>
                         <input id="userName" name="userName" type="text" placeholder="User Name">
                         <input type="password" name="password" id="password" placeholder="password">
