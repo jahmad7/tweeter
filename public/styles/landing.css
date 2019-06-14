@@ -88,3 +88,11 @@ footer {
     justify-content: space-between;
     padding: 25px 55px;
 }
+
+#loginDiv{
+    display: none;
+}
+
+#signUpDiv {
+    display: none;
+}

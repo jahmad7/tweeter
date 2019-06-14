@@ -66,7 +66,7 @@ function renderContributions(ecosystem) {
 $(function () {
   function loadContrabutions() {
     $.ajax({
-      url: "/tweets",
+      url: "/contributions",
       method: "GET",
       success: function (response) {
         renderContributions(response);
@@ -93,7 +93,7 @@ $(function () {
     }
     else{
       $.ajax({
-        url: "/tweets",
+        url: "/contributions",
         type: "POST",
         data: $queryString,
         success: function () {

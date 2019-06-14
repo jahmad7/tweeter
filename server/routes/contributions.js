@@ -7,7 +7,7 @@ const contributionsRoute  = express.Router();
 module.exports = function(DataHelpers) {
 
   contributionsRoute.get("/", function(req, res) {
-    DataHelpers.getTweets((err, contribution) => {
+    DataHelpers.getValues((err, contribution) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {

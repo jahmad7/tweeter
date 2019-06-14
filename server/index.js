@@ -42,7 +42,7 @@ MongoClient.connect(MONGODB_URI, (err,client) =>{
 
   // **** Mount
   app.use("/users", userRouter)
-  app.use("/", contributionRouter);
+  app.use("/contributions", contributionRouter);
 
   app.listen(PORT, () => {
     console.log("Example app listening on port " + PORT);

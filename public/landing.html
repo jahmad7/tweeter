@@ -14,27 +14,30 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/landing.css" type="text/css" />
 
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/signup.js"></script>
+    <script type="text/javascript" src="/scripts/landing.js"></script>
 
 </head>
 <body>
     <header>
         <div id="signUpSection">
-            <button>Sign Up</button>
+            <button id="signUpBtn">Sign Up</button>
         </div>
         <div id="header-middle">
         </div>
         <div id="loginSection">
-                <button>Login</button>
+                <button id="loginBtn">Login</button>
         </div>
     </header>
 
     <main>
         <div id="main-content">
             <div id="main-top">
-                <h1>International Development</h1>
-                <h2>For Local Change</h2>
+                <h1 id="main-header">International Development</h1>
+                <h2 id="secondary-header">For Local Change</h2>
             </div>
             <div id="main-middle">
                 <input id="searchBar" type="text" placeholder="Search Stream ... | ">
@@ -42,22 +45,22 @@
                 <!-- login in form -->
                 <div id="loginDiv">
                     <form>
-                        <h3>Login</h3>
                         <input id="userName" name="userName" type="text" placeholder="User Name">
                         <input type="password" name="password" id="password" placeholder="password">
                         <input type="submit" name="login" id="loginSubmit" value="Login">
                     </form>
+                    <button class="backToSearch">Back</button>
                 </div>
 
                 <!-- Sign up form -->
                 <div id="signUpDiv">
                     <form id="signUpForm"> 
-                        <h3>Sign Up</h3>
-                        <input id="userName" name="userName" type="text" placeholder="User Name">
-                        <input type="password" name="password" id="password" placeholder="password">
-                        <input type="password" name="verifyPassword" id="verifyPassword" placeholder="Verify Password">
+                        <input id="sUuserName" name="userName" type="text" placeholder="User Name">
+                        <input type="password" name="password" id="sUpassword" placeholder="password">
+                        <input type="password" name="verifyPassword" id="sUverifyPassword" placeholder="Verify Password">
                         <input type="submit" name="signUp" id="signUpSubmit" value="Sign Up">
                     </form>
+                    <button class="backToSearch">Back</button>
                 </div>
 
             </div>
