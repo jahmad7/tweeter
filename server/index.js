@@ -1,7 +1,7 @@
 "use strict";
 
 // mongoDb Set up
-const MongoClient = require("mongodb")
+const MongoClient = require("mongodb");
 const MONGODB_URI = "mongodb://localhost:27017/necter";
 
 
@@ -43,7 +43,6 @@ MongoClient.connect(MONGODB_URI, (err,db) =>{
   app.listen(PORT, () => {
     console.log("Example app listening on port " + PORT);
   });
-
 });
 
   

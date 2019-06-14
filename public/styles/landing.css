@@ -1,0 +1,90 @@
+body {
+    background-color: black;
+    background-image: url("/images/nasa.jpeg");
+}
+h1, h2, h3, a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Contrail One', cursive;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-top: 0px;
+}
+
+#necter-logo{
+    height: 40px;
+}
+
+button , input{
+    color: #fff;
+    background-color:  #0B172A;
+    border: 2px solid #FCAF3B;
+    border-radius: 25px;
+    padding: 2px 15px;
+}
+
+body {
+    background-color: black;
+    height: 100vh;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    background-color:  #0B172A;
+    justify-content: space-between;
+    padding: 25px 55px;
+
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    justify-content: center;
+    height: 80vh;
+    padding: 25px 0px;
+}
+
+
+#main-content{
+    display: flex;
+    flex-direction: column;
+    width:60%;
+}
+
+#main-top, #main-bottom, #main-middle {
+    height: 33.33%;
+}
+
+#main-top {
+    text-align: center;
+    margin-top: 3em;
+}
+
+#main-bottom {
+    align-self: center;
+}
+
+#main-middle #searchBar {
+    width: 94%;
+    height: 2em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px 55px;
+}
