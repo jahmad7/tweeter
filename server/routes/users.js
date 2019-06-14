@@ -1,13 +1,11 @@
 "use strict";
 
-const userHelper    = require("../lib/util/user-helper")
-
 const express       = require('express');
-const tweetsRoutes  = express.Router();
+const userRoute  = express.Router();
 
 module.exports = function(DataHelpers) {
 
-  tweetsRoutes.get("/", function(req, res) {
+  userRoute.get("/", function(req, res) {
     DataHelpers.getTweets((err, contribution) => {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -17,7 +15,7 @@ module.exports = function(DataHelpers) {
     });
   });
 
-  tweetsRoutes.post("/", function(req, res) {
+  userRoute.post("/", function(req, res) {
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
@@ -29,20 +27,15 @@ module.exports = function(DataHelpers) {
     var yyyy = today.getFullYear();
     today = mm + '/' + dd + '/' + yyyy;
   
-    const user = req.body.user ? req.body.user : "Not Logged In";
-    const tweet = {
-      user: user,
-      location: req.body.location,
+
+    const userInformation = {
+      user: req.body.userName,
       title: req.body.title,
-      content: {
-        text: req.body.text,
-        mainBranch: req.body.mainBranch,
-        currentNode: req.body.currentNode
-      },
-      created_at: today
+      password: req.body.password,
+      account_create: today
     };
 
-    DataHelpers.saveTweet(tweet, (err) => {
+    DataHelpers.saveValue(userInformation, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
@@ -51,6 +44,6 @@ module.exports = function(DataHelpers) {
     });
   });
 
-  return tweetsRoutes;
+  return userRoute;
 
 }

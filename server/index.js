@@ -31,19 +31,21 @@ MongoClient.connect(MONGODB_URI, (err,client) =>{
 
 
   //call datahelpers functions to get the helpers object for the database 
-  const DataHelpers = require("./lib/data-helpers.js")(dataBase);
+  const PollinationDataHelpers = require("./lib/data-helpers.js")(dataBase, "pollination");
+  const UserDataHelpers = require("./lib/data-helpers.js")(dataBase, "userData");
 
  // **** ROUTES for working on the database using different helper functions
 
- //tweets router 
-  const contributionRouter = require("./routes/tweets")(DataHelpers);
+ //contributions router 
+  const contributionRouter = require("./routes/contributions")(PollinationDataHelpers);
+  const userRouter = require("./routes/contributions")(UserDataHelpers);
 
   //users router
 
   // **** Mount
 
   //app.use("/users", user)
-  app.use("/tweets", contributionRouter);
+  app.use("/", contributionRouter);
 
   app.listen(PORT, () => {
     console.log("Example app listening on port " + PORT);
