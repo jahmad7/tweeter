@@ -38,13 +38,10 @@ MongoClient.connect(MONGODB_URI, (err,client) =>{
 
  //contributions router 
   const contributionRouter = require("./routes/contributions")(PollinationDataHelpers);
-  const userRouter = require("./routes/contributions")(UserDataHelpers);
-
-  //users router
+  const userRouter = require("./routes/users")(UserDataHelpers);
 
   // **** Mount
-
-  //app.use("/users", user)
+  app.use("/users", userRouter)
   app.use("/", contributionRouter);
 
   app.listen(PORT, () => {
